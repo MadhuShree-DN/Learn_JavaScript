@@ -1,2 +1,1 @@
 # Learn_JavaScript
-JS
