@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mean of an Array</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    width: 370px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Mean of an Array</h2>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="calculateMean()">Calculate Mean</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateMean() {
+      var inputArray = document.getElementById("arrayInput").value.split(',').map(Number);
+      var sum = inputArray.reduce((acc, curr) => acc + curr, 0);
+      var mean = sum / inputArray.length;
+      document.getElementById("result").innerHTML = "Mean: " + mean.toFixed(2);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Century from Year</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    width: 370px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Century from Year</h2>
+    <label for="year">Enter a year:</label>
+    <!-- Add a pattern attribute to ensure only numeric input -->
+    <input type="text" id="year" pattern="[0-9]*" placeholder="Enter a year">
+    <button onclick="calculateCentury()">Calculate Century</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateCentury() {
+      var year = parseInt(document.getElementById("year").value);
+      var century = Math.ceil(year / 100);
+      document.getElementById("result").innerHTML = "Century: " + century;
+    }
+  </script>
+</body>
+</html>

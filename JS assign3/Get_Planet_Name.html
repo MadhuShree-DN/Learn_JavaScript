@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Planet Name</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  select {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Get Planet Name</h2>
+    <label for="planetId">Select Planet ID:</label>
+    <select id="planetId" onchange="getPlanetName()">
+      <option value="1">Mercury</option>
+      <option value="2">Venus</option>
+      <option value="3">Earth</option>
+      <option value="4">Mars</option>
+      <option value="5">Jupiter</option>
+      <option value="6">Saturn</option>
+      <option value="7">Uranus</option>
+      <option value="8">Neptune</option>
+    </select>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function getPlanetName() {
+      var Id = document.getElementById("planetId").value;
+      var planetName;
+
+      switch (Id) {
+        case "1":
+          planetName = "Mercury";
+          break;
+        case "2":
+          planetName = "Venus";
+          break;
+        case "3":
+          planetName = "Earth";
+          break;
+        case "4":
+          planetName = "Mars";
+          break;
+        case "5":
+          planetName = "Jupiter";
+          break;
+        case "6":
+          planetName = "Saturn";
+          break;
+        case "7":
+          planetName = "Uranus";
+          break;
+        case "8":
+          planetName = "Neptune";
+          break;
+        default:
+          planetName = "Unknown";
+      }
+
+      document.getElementById("result").innerHTML = "Planet Name: " + planetName;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Addition</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Array Addition</h2>
+    <label for="arrayInput">Enter array elements (comma-separated):</label>
+    <input type="text" id="arrayInput" placeholder="Enter array elements">
+    <button onclick="sumArray()">Sum Array</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function sumArray() {
+      var input = document.getElementById("arrayInput").value;
+      var numbers = input.split(',').map(Number); // Convert comma-separated string to array of numbers
+      var sum = 0;
+      for (var i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
+      document.getElementById("result").innerHTML = "Sum: " + sum;
+    }
+  </script>
+</body>
+</html>

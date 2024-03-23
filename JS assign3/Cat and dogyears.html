@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat and Dog Years</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    width: 370px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Cat and Dog Years</h2>
+    <label for="humanYears">Enter human years:</label>
+    <input type="text" id="humanYears" placeholder="Enter human years">
+    <button onclick="calculateYears()">Calculate</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateYears() {
+      var humanYears = parseInt(document.getElementById("humanYears").value);
+      var catYears, dogYears;
+
+      if (humanYears <= 0) {
+        document.getElementById("result").innerHTML = "Please enter a valid number of human years.";
+        return;
+      }
+
+      if (humanYears == 1) {
+        catYears = 15;
+        dogYears = 10.5;
+      } else if (humanYears == 2) {
+        catYears = 24;
+        dogYears = 21;
+      } else {
+        catYears = 24 + (humanYears - 2) * 4;
+        dogYears = 21 + (humanYears - 2) * 4;
+      }
+
+      document.getElementById("result").innerHTML = "In cat years: " + catYears + "<br>In dog years: " + dogYears;
+    }
+  </script>
+</body>
+</html>

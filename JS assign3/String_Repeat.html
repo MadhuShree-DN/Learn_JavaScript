@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Repeat</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 370px; /* Increase the width */
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>String Repeat</h2>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <input type="text" id="repeatCount" placeholder="Enter repeat count" style="width: 370px;"> <!-- Set width here as well -->
+    <button onclick="repeatString()">Repeat String</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function repeatString() {
+      var inputString = document.getElementById("inputString").value;
+      var repeatCount = parseInt(document.getElementById("repeatCount").value);
+      var repeatedString = inputString.repeat(repeatCount);
+      document.getElementById("result").innerHTML = "Repeated String: " + repeatedString;
+    }
+  </script>
+</body>
+</html>

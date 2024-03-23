@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Total Points Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    width: 370px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Total Points Calculator</h2>
+    <label for="matchResults">Enter match results (e.g., "3:2", "1:1"):</label>
+    <input type="text" id="matchResults" placeholder="Enter match results">
+    <button onclick="calculateTotalPoints()">Calculate Total Points</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateTotalPoints() {
+      const matchResultsInput = document.getElementById("matchResults").value;
+      const results = matchResultsInput.split(",").map(result => result.trim());
+
+      let totalPoints = 0;
+
+      for (let i = 0; i < results.length; i++) {
+        const matchResult = results[i].split(":");
+        const homeGoals = parseInt(matchResult[0]);
+        const awayGoals = parseInt(matchResult[1]);
+
+        if (homeGoals > awayGoals) {
+          totalPoints += 3; // Award 3 points for a win
+        } else if (homeGoals === awayGoals) {
+          totalPoints += 1; // Award 1 point for a draw
+        }
+        // No points for a loss
+      }
+
+      document.getElementById("result").innerHTML = "Total Points: " + totalPoints;
+    }
+  </script>
+</body>
+</html>
